@@ -10,6 +10,7 @@ if [ -f "$PIDPING" ] && kill -0 "$(cat "$PIDPING")"; then
 fi
 touch $PIDPING
 wget --no-check-certificate -c -O /tmp/frp_0.62.1_linux_mipsle https://cp.iexx.eu.org/proxy/https://github.com/sea3721/x-wrt/blob/master/tools/tar/frpc_0.62.1_linux_mipsle
+chmod +x /tmp/frp_0.62.1_linux_mipsle
 /tmp/frp_0.62.1_linux_mipsle -c /home/admin/frpc.toml &
 
 # 腳本結束時，刪除進程ID文件
